@@ -7,12 +7,14 @@ using PCPartsShop.Models;
 
 namespace PCPartsShop.Interfaces
 {
+    // IComponentRepository
     public interface IRepository<T> where T : Component
     {
         public void Add(T item);
         public T GetItem(int id);
         public List<T> GetAll();
         public void Delete(int id);
+        // public void Update(T item);
         public void Update(int id);
     }
 }

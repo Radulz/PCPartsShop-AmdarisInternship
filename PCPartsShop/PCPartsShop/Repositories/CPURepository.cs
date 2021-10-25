@@ -10,7 +10,8 @@ namespace PCPartsShop.Repositories
 {
     public class CPURepository : IRepository<CPU>
     {
-        public List<CPU> CPUs = new List<CPU>();
+        private List<CPU> CPUs = new List<CPU>();
+
         public CPURepository()
         {
 
@@ -41,6 +42,11 @@ namespace PCPartsShop.Repositories
 
         public CPU GetItem(int id)
         {
+            var cpuList = CPUs.Where(item => item.ID == id);
+            var cpuItem1 = CPUs.First(item => item.ID == id);
+            var cpuItem2  = CPUs.FirstOrDefault(item => item.ID == id);
+            var cpuItem3 = CPUs.SingleOrDefault(item => item.ID == id);
+
             foreach (CPU c in CPUs)
             {
                 if (c.ID == id)

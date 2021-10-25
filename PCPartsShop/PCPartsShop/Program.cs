@@ -1,6 +1,5 @@
 ﻿using System;
 using PCPartsShop.Models;
-using PCPartsShop.Interfaces;
 using PCPartsShop.Repositories;
 using System.Collections.Generic;
 
@@ -10,6 +9,13 @@ namespace PCPartsShop
     {
         static void Main(string[] args)
         {
+            var newCpu = new CPU
+            {
+                UniqueId = Guid.NewGuid(),
+                Make = "make",
+                Cores = 2
+            };
+
             Component a, b, c, d, e;
             CPU aux, aux1;
             GPU aux2, aux3;
@@ -50,7 +56,7 @@ namespace PCPartsShop
             punits.Add((PSU)d);
             sticks.Add(aux8);
             sticks.Add((RAM)e);
-            foreach (CPU i in proc.CPUs)
+            foreach (CPU i in proc.GetAll())
             {
                 Console.WriteLine(i.ID + " " + i.Make + " " + i.Model);
             }

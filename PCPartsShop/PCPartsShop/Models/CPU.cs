@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PCPartsShop.Models
+﻿namespace PCPartsShop.Models
 {
     public class CPU : Component
     {
@@ -20,6 +14,8 @@ namespace PCPartsShop.Models
         {
             c++;
         }
+
+        // contructors not needed anymore
         public CPU(string make, string model, double frequency, string socket, int tech, int mfreq, int tdp, int corenr) : base(make, model)
         {
             createID();
